@@ -45,25 +45,25 @@ export default function Navbar() {
           : 'border-b border-transparent bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-container items-center justify-between px-6 py-3">
+      <nav className="flex items-center justify-between px-6 py-4 lg:px-10">
         {/* Brand lockup */}
         <a href="#hero" className="group flex flex-col leading-none" aria-label="The Gin Library">
           <span
-            className={`text-[0.55rem] font-medium uppercase tracking-kicker text-accent ${
+            className={`text-[.8rem] font-medium uppercase tracking-kicker text-accent ${
               dark ? '' : 'text-on-photo'
             }`}
           >
-            Speakeasy
+            Cocktail Bar
           </span>
           <span
-            className={`font-display text-lg uppercase tracking-wide text-accent transition-colors ${
+            className={`font-display text-[2.5rem] uppercase tracking-wide text-accent transition-colors ${
               dark ? '' : 'text-on-photo'
             }`}
           >
             The Gin Library
           </span>
           <span
-            className={`text-[0.55rem] font-medium uppercase tracking-kicker text-accent ${
+            className={`text-[1rem] font-medium uppercase tracking-kicker text-accent ${
               dark ? '' : 'text-on-photo'
             }`}
           >
@@ -71,53 +71,55 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* Desktop links */}
-        <ul className="hidden items-center gap-7 lg:flex">
-          {links.map((link) => (
-            <li key={link.id}>
-              <a
-                href={`#${link.id}`}
-                className={`inline-flex min-h-[44px] items-center font-display text-xs font-medium uppercase tracking-widest transition-colors ${linkColor}`}
-              >
-                {t(link.key)}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {/* Right group: nav links + controls */}
+        <div className="flex items-center gap-6 lg:gap-9">
+          <ul className="hidden items-center gap-7 lg:flex">
+            {links.map((link) => (
+              <li key={link.id}>
+                <a
+                  href={`#${link.id}`}
+                  className={`inline-flex min-h-[44px] items-center font-display text-l uppercase tracking-widest transition-colors ${linkColor}`}
+                >
+                  {t(link.key)}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        <div className="flex items-center gap-3">
-          <LanguageToggle dark={dark} />
-          <Button
-            as="a"
-            href="#contact"
-            variant={dark ? 'outline' : 'brand'}
-            className="hidden px-5 py-2 sm:inline-flex"
-          >
-            {t('nav.reserve')}
-          </Button>
+          <div className="flex items-center gap-3">
+            <LanguageToggle dark={dark} />
+            <Button
+              as="a"
+              href="#contact"
+              variant={dark ? 'outline' : 'brand'}
+              className="hidden px-5 py-2 sm:inline-flex"
+            >
+              {t('nav.reserve')}
+            </Button>
 
-          {/* Mobile menu toggle */}
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Menu"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            className="flex h-11 w-11 items-center justify-center text-accent lg:hidden"
-          >
-            <span className="relative block h-3 w-5">
-              <span
-                className={`absolute left-0 top-0 h-px w-5 bg-current transition-transform ${
-                  open ? 'translate-y-1.5 rotate-45' : ''
-                }`}
-              />
-              <span
-                className={`absolute bottom-0 left-0 h-px w-5 bg-current transition-transform ${
-                  open ? '-translate-y-1 -rotate-45' : ''
-                }`}
-              />
-            </span>
-          </button>
+            {/* Mobile menu toggle */}
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-label="Menu"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              className="flex h-11 w-11 items-center justify-center text-accent lg:hidden"
+            >
+              <span className="relative block h-3 w-5">
+                <span
+                  className={`absolute left-0 top-0 h-px w-5 bg-current transition-transform ${
+                    open ? 'translate-y-1.5 rotate-45' : ''
+                  }`}
+                />
+                <span
+                  className={`absolute bottom-0 left-0 h-px w-5 bg-current transition-transform ${
+                    open ? '-translate-y-1 -rotate-45' : ''
+                  }`}
+                />
+              </span>
+            </button>
+          </div>
         </div>
       </nav>
 

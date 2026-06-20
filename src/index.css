@@ -207,6 +207,46 @@ html.js [data-reveal].is-visible {
   }
 }
 
+/* ── Hero wordmark ───────────────────────────────────────────────────
+ * Sheen sweep: a solid-cream duplicate of the wordmark, revealed through a
+ * moving mask band so a single highlight travels across the gold letters
+ * once on load. (Not background-clip:text — the fill is one solid colour.) */
+@keyframes hero-sheen-sweep {
+  from {
+    -webkit-mask-position: 135% 0;
+    mask-position: 135% 0;
+  }
+  to {
+    -webkit-mask-position: -45% 0;
+    mask-position: -45% 0;
+  }
+}
+/* Gold wordmark keeps legibility over photography. */
+.hero-wordmark {
+  text-shadow:
+    0 2px 24px rgba(0, 0, 0, 0.6),
+    0 1px 4px rgba(0, 0, 0, 0.55);
+}
+
+.hero-sheen {
+  color: rgb(var(--color-cream));
+  -webkit-mask-image: linear-gradient(105deg, transparent 38%, #000 50%, transparent 62%);
+  mask-image: linear-gradient(105deg, transparent 38%, #000 50%, transparent 62%);
+  -webkit-mask-size: 230% 100%;
+  mask-size: 230% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 135% 0;
+  mask-position: 135% 0;
+  animation: hero-sheen-sweep 2.4s ease-in-out 1.6s 1 both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sheen {
+    display: none;
+  }
+}
+
 /* Honour reduced-motion: neutralise all transitions + animations. */
 @media (prefers-reduced-motion: reduce) {
   *,
