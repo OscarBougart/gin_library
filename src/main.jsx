@@ -3,7 +3,18 @@ import { createRoot } from 'react-dom/client'
 import { MotionConfig } from 'framer-motion'
 import App from './App.jsx'
 import { LanguageProvider } from './context/LanguageContext.jsx'
+import heroImage from './assets/images/ginlibrary1.webp'
 import './index.css'
+
+// Preload the hero photograph (the LCP element). It's a JS-imported asset, so
+// without this the browser only discovers it after the bundle parses; this
+// link starts the fetch as soon as this module runs.
+const heroPreload = document.createElement('link')
+heroPreload.rel = 'preload'
+heroPreload.as = 'image'
+heroPreload.href = heroImage
+heroPreload.fetchPriority = 'high'
+document.head.appendChild(heroPreload)
 
 // Mark the document JS-ready so the scroll-reveal hidden state only applies
 // when we can actually reveal it. Without `.js`, [data-reveal] stays visible.

@@ -17,7 +17,7 @@ export default function SectionWrapper({
   children,
 }) {
   return (
-    <section id={id} className={`scroll-mt-20 px-6 py-24 ${className}`}>
+    <section id={id} className={`scroll-mt-28 px-6 py-24 ${className}`}>
       <div className={fluid ? innerClassName : `mx-auto max-w-container ${innerClassName}`}>
         {children}
       </div>

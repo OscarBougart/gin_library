@@ -42,19 +42,6 @@
   --carbon-900: 23 29 22;
   --carbon-950: 16 20 15;
 
-  /* Azure-mist — cool teal-green. Defined but currently unused. */
-  --azure-50: 239 245 244;
-  --azure-100: 224 235 233;
-  --azure-200: 193 215 210;
-  --azure-300: 162 195 188;
-  --azure-400: 131 175 166;
-  --azure-500: 99 156 143;
-  --azure-600: 80 124 115;
-  --azure-700: 60 93 86;
-  --azure-800: 40 62 57;
-  --azure-900: 20 31 29;
-  --azure-950: 14 22 20;
-
   /* Amber-gold — bright saturated gold (primary accent). */
   --amber-50: 254 249 230;
   --amber-100: 254 243 205;

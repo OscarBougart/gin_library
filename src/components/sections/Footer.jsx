@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { useTranslation } from '../../hooks/useTranslation'
+import LegalDialog from '../ui/LegalDialog'
 
 const links = [
   { id: 'about', key: 'nav.about' },
@@ -14,6 +16,7 @@ const links = [
 export default function Footer() {
   const { t } = useTranslation()
   const year = new Date().getFullYear()
+  const [legalKind, setLegalKind] = useState(null)
 
   return (
     <footer className="bg-ink px-6 py-16 text-cream">
@@ -78,15 +81,25 @@ export default function Footer() {
             © {year} The Gin Library · {t('footer.rights')}
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="font-sans text-xs text-cream/60 transition-colors hover:text-cream">
+            <button
+              type="button"
+              onClick={() => setLegalKind('imprint')}
+              className="font-sans text-xs text-cream/60 transition-colors hover:text-cream"
+            >
               {t('footer.imprint')}
-            </a>
-            <a href="#" className="font-sans text-xs text-cream/60 transition-colors hover:text-cream">
+            </button>
+            <button
+              type="button"
+              onClick={() => setLegalKind('privacy')}
+              className="font-sans text-xs text-cream/60 transition-colors hover:text-cream"
+            >
               {t('footer.privacy')}
-            </a>
+            </button>
           </div>
         </div>
       </div>
+
+      <LegalDialog kind={legalKind} onClose={() => setLegalKind(null)} />
     </footer>
   )
 }

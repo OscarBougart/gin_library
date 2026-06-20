@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-20T18:30:00Z",
+  "title": "Design System: The Gin Library",
+  "extensions": {
+    "colorMeta": {
+      "background": { "role": "neutral", "displayName": "Library Black", "canonical": "#10140F", "tonalRamp": ["#10140F", "#171D16", "#2E3A2C", "#455742", "#73916E", "#ABBDA8", "#E3E9E2", "#F1F4F0"] },
+      "surface": { "role": "neutral", "displayName": "Shelf", "canonical": "#171D16", "tonalRamp": ["#10140F", "#171D16", "#2E3A2C", "#455742", "#73916E", "#ABBDA8", "#E3E9E2", "#F1F4F0"] },
+      "elevated": { "role": "neutral", "displayName": "Raised Oak", "canonical": "#2E3A2C", "tonalRamp": ["#10140F", "#171D16", "#2E3A2C", "#455742", "#73916E", "#ABBDA8", "#E3E9E2", "#F1F4F0"] },
+      "foreground": { "role": "neutral", "displayName": "Candle White", "canonical": "#F1F4F0", "tonalRamp": ["#10140F", "#171D16", "#2E3A2C", "#455742", "#73916E", "#ABBDA8", "#E3E9E2", "#F1F4F0"] },
+      "muted": { "role": "neutral", "displayName": "Smoke", "canonical": "#ABBDA8", "tonalRamp": ["#10140F", "#171D16", "#2E3A2C", "#455742", "#73916E", "#ABBDA8", "#E3E9E2", "#F1F4F0"] },
+      "border": { "role": "neutral", "displayName": "Hairline", "canonical": "#455742", "tonalRamp": ["#10140F", "#171D16", "#2E3A2C", "#455742", "#73916E", "#ABBDA8", "#E3E9E2", "#F1F4F0"] },
+      "accent": { "role": "primary", "displayName": "Gilt Gold", "canonical": "#FAC105", "tonalRamp": ["#231B01", "#322701", "#644D02", "#967403", "#FAC105", "#FCDA69", "#FEF3CD", "#FEF9E6"] },
+      "accent-strong": { "role": "primary", "displayName": "Pressed Gold", "canonical": "#C89A04", "tonalRamp": ["#231B01", "#322701", "#644D02", "#967403", "#FAC105", "#FCDA69", "#FEF3CD", "#FEF9E6"] },
+      "accent-warm": { "role": "secondary", "displayName": "Apricot Warmth", "canonical": "#E98A16", "tonalRamp": ["#211303", "#2F1C04", "#5D3709", "#8C530D", "#E98A16", "#F2B973", "#FBE8D0", "#FDF3E8"] },
+      "cream": { "role": "neutral", "displayName": "Cream", "canonical": "#FEF9E6", "tonalRamp": ["#231B01", "#322701", "#644D02", "#967403", "#FAC105", "#FCDA69", "#FEF3CD", "#FEF9E6"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero wordmark only; Catorze 27 caps, resolves letter by letter on load. Capped at 6rem." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles, uppercase Catorze, text-wrap balance." },
+      "title": { "displayName": "Title", "purpose": "Card sub-headings (Corporate Events, Gin Tastings)." },
+      "body": { "displayName": "Body", "purpose": "Reading copy in Resamitz serif, sentence case, ~65ch, 75-80% ink." },
+      "label": { "displayName": "Label", "purpose": "Nav links, buttons, sub-labels: Catorze caps tracked 0.2em. Kicker variant is Resamitz 0.75rem tracked 0.35em." }
+    },
+    "shadows": [
+      { "name": "raised", "value": "0 0 5px 2px rgba(0,0,0,0.1)", "purpose": "Soft ambient halo under photographic cards (event offerings, About photo)." },
+      { "name": "floating", "value": "0 0 10px 2px rgba(0,0,0,0.1)", "purpose": "The legal dialog, lifted off the page." },
+      { "name": "text-on-photo", "value": "0 1px 3px rgba(0,0,0,0.55)", "purpose": "Keeps Cream and gold text legible over photography." }
+    ],
+    "motion": [
+      { "name": "ease-reveal", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Scroll-reveal and image-hover transitions (0.8s reveal, 0.5s hover)." },
+      { "name": "ease-out-quint", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Hero load choreography (wordmark stagger, tagline/CTA rise)." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "container", "value": "1140px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Brand Button (over photo)",
+      "kind": "button",
+      "refersTo": "button-brand",
+      "description": "The hero and contact CTA: gold outline over photography, fills solid gold on hover.",
+      "html": "<a class=\"ds-btn-brand\" href=\"#\">Reserve a table</a>",
+      "css": ".ds-btn-brand { display:inline-flex; align-items:center; justify-content:center; border:1px solid #FAC105; background:transparent; color:#FAC105; padding:12px 28px; border-radius:2px; font-family:'Catorze 27 Medium',Georgia,serif; font-size:0.875rem; text-transform:uppercase; letter-spacing:0.2em; text-decoration:none; transition:background .2s,color .2s; cursor:pointer; } .ds-btn-brand:hover { background:#FAC105; color:#10140F; } .ds-btn-brand:focus-visible { outline:2px solid #FAC105; outline-offset:2px; }"
+    },
+    {
+      "name": "Solid Button",
+      "kind": "button",
+      "refersTo": "button-solid",
+      "description": "The loudest action: filled gold with a dark label, deepens on hover.",
+      "html": "<button class=\"ds-btn-solid\" type=\"button\">Book a tasting</button>",
+      "css": ".ds-btn-solid { display:inline-flex; align-items:center; justify-content:center; border:1px solid #FAC105; background:#FAC105; color:#10140F; padding:12px 28px; border-radius:2px; font-family:'Catorze 27 Medium',Georgia,serif; font-size:0.875rem; text-transform:uppercase; letter-spacing:0.2em; transition:background .2s,border-color .2s; cursor:pointer; } .ds-btn-solid:hover { background:#C89A04; border-color:#C89A04; } .ds-btn-solid:focus-visible { outline:2px solid #FAC105; outline-offset:2px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Quiet secondary action: faint gold outline, fills gold on hover.",
+      "html": "<button class=\"ds-btn-outline\" type=\"button\">Inquire</button>",
+      "css": ".ds-btn-outline { display:inline-flex; align-items:center; justify-content:center; border:1px solid rgba(250,193,5,0.5); background:transparent; color:#FAC105; padding:12px 28px; border-radius:2px; font-family:'Catorze 27 Medium',Georgia,serif; font-size:0.875rem; text-transform:uppercase; letter-spacing:0.2em; transition:background .2s,border-color .2s,color .2s; cursor:pointer; } .ds-btn-outline:hover { background:#FAC105; border-color:#FAC105; color:#10140F; } .ds-btn-outline:focus-visible { outline:2px solid #FAC105; outline-offset:2px; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Top-bar anchor in Catorze caps; active section shows a thin sliding gold underline.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\" aria-current=\"location\">Events</a>",
+      "css": ".ds-nav-link { position:relative; display:inline-flex; align-items:center; min-height:44px; color:#FAC105; font-family:'Catorze 27 Medium',Georgia,serif; font-size:0.875rem; text-transform:uppercase; letter-spacing:0.2em; text-decoration:none; transition:color .2s; } .ds-nav-link:hover { color:#FEF9E6; } .ds-nav-link[aria-current]::after { content:''; position:absolute; bottom:8px; left:50%; transform:translateX(-50%); width:20px; height:1px; background:currentColor; }"
+    },
+    {
+      "name": "Event Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Image-topped offering card on Shelf with a hairline border and ambient halo.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-media\"></div><div class=\"ds-card-body\"><h3 class=\"ds-card-title\">Gin Tastings</h3><p class=\"ds-card-text\">A guided journey through the world of gin.</p></div></article>",
+      "css": ".ds-card { display:flex; flex-direction:column; overflow:hidden; border:1px solid rgba(69,87,66,0.6); background:#171D16; border-radius:2px; box-shadow:0 0 5px 2px rgba(0,0,0,0.1); } .ds-card-media { aspect-ratio:16/10; background:linear-gradient(135deg,#2E3A2C,#171D16); } .ds-card-body { padding:32px; } .ds-card-title { margin:0; font-family:'Catorze 27 Medium',Georgia,serif; font-size:1.5rem; line-height:1.05; text-transform:uppercase; color:#F1F4F0; } .ds-card-text { margin:16px 0 0; font-family:Resamitz,Georgia,serif; line-height:1.625; color:rgba(241,244,240,0.75); }"
+    },
+    {
+      "name": "Language Toggle",
+      "kind": "chip",
+      "refersTo": "language-toggle",
+      "description": "DE/EN segmented switch; active language is a solid gold chip.",
+      "html": "<div class=\"ds-toggle\" role=\"group\" aria-label=\"Language\"><button type=\"button\" aria-pressed=\"true\">DE</button><button type=\"button\" aria-pressed=\"false\">EN</button></div>",
+      "css": ".ds-toggle { display:inline-flex; border:1px solid rgba(250,193,5,0.5); border-radius:2px; } .ds-toggle button { min-height:44px; padding:0 12px; background:transparent; color:rgba(250,193,5,0.7); border:none; font-family:'Catorze 27 Medium',Georgia,serif; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.2em; cursor:pointer; transition:color .2s,background .2s; } .ds-toggle button:hover { color:#FAC105; } .ds-toggle button[aria-pressed=\"true\"] { background:#FAC105; color:#10140F; }"
+    },
+    {
+      "name": "Kicker Label",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "The single tracked eyebrow above the About heading (used once, brand-wide).",
+      "html": "<span class=\"ds-kicker\">Our Story</span>",
+      "css": ".ds-kicker { font-family:Resamitz,Georgia,serif; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.35em; color:#ABBDA8; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Candlelit Library",
+    "overview": "Near-black warm-olive surfaces, a single gold light source, rows of bottles standing like spines on a shelf. This is a bar you read a drink in, not just order one. The system is built to feel crafted and precise first: every edge is sharp, every label is set in condensed caps, and the gold accent behaves like gilding on a book cover, rare and deliberate, never a wash. The ground is a warm olive-tinted near-black (#10140F), never pure black, lit by one saturated gold (#FAC105). Two self-hosted serifs do the talking: a condensed display face (Catorze 27) in uppercase for headings and labels, and a quieter reading serif (Resamitz) for body. Photography carries the mood; type and color frame it. It is not a loud nightclub, not corporate-SaaS clean, not the generic restaurant template, and not rustic-farmhouse warm.",
+    "keyCharacteristics": [
+      "Warm near-black ground (#10140F), never #000.",
+      "Gold (#FAC105) used as rare light, never a flood.",
+      "Two self-hosted serifs: condensed display caps + a sentence-case reading serif.",
+      "Sharp 2px corners everywhere.",
+      "Real photography carries the mood; type frames it.",
+      "Choreographed first load, restrained scroll reveals; fully neutralized under reduced-motion."
+    ],
+    "rules": [
+      { "name": "The Single Candle Rule", "body": "Gold is a highlight, not a surface. One gold light source per view, on labels, a heading accent, or a CTA, never spread as a background wash.", "section": "colors" },
+      { "name": "The Warm Near-Black Rule", "body": "The ground is warm olive-tinted near-black (#10140F). Pure #000 and cool greys are forbidden.", "section": "colors" },
+      { "name": "The Cream-Over-Photo Rule", "body": "Text on photography uses Cream (#FEF9E6), not Candle White. Cream carries the candlelit warmth.", "section": "colors" },
+      { "name": "The Caps-for-Headings Rule", "body": "Condensed display caps (Catorze) are for headings and short labels only. Body copy is always sentence-case Resamitz. All-caps body is forbidden.", "section": "typography" },
+      { "name": "The One Kicker Rule", "body": "The tracked uppercase eyebrow appears exactly once, above the About heading. It is never repeated above every section.", "section": "typography" },
+      { "name": "The Flat-Until-Photo Rule", "body": "Surfaces are flat at rest; depth is tonal (bg to surface to elevated). A real shadow is permitted only over a photograph or for a lifted modal.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the ground warm near-black (#10140F); reach for Shelf (#171D16) and Raised Oak (#2E3A2C) for layering, never #000.",
+      "Do treat gold (#FAC105) as a single candle: labels, one heading accent, one CTA per view.",
+      "Do set headings and labels in Catorze caps and body in sentence-case Resamitz.",
+      "Do keep every corner at 2px and every card border a full hairline.",
+      "Do let real photography carry the mood; frame it with type and gold rather than competing with it.",
+      "Do use Cream (#FEF9E6) for text over photos and Candle White (#F1F4F0) on solid dark sections.",
+      "Do keep all motion enhancement-only: content visible by default, fully neutralized under prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't drift toward a loud nightclub: no neon, no high-saturation party palette, no club-flyer energy.",
+      "Don't drift toward corporate-SaaS clean: no Inter or geometric sans, no blue accents, no flat icon-card grids.",
+      "Don't ship the generic restaurant template: stock hero over identical icon-heading-text cards in a default Google serif.",
+      "Don't go rustic-farmhouse: no cream paper, kraft, hand-drawn, or cozy-cafe warmth.",
+      "Don't spread gold as a background wash or push it past a CTA-and-labels share of any screen.",
+      "Don't repeat the tracked eyebrow kicker above every section; it appears once.",
+      "Don't set body copy in all-caps, and never use gradient-filled text; the hero highlight is a masked sheen over a single solid color.",
+      "Don't add a colored border-left/border-right stripe to cards or callouts; full hairline borders only.",
+      "Don't add decorative shadows or glassmorphism; surfaces are flat until they sit over a photo."
+    ]
+  }
+}

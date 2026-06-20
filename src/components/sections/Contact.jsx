@@ -18,7 +18,7 @@ export default function Contact() {
   const email = t('contact.email')
 
   return (
-    <section id="contact" className="relative scroll-mt-20 overflow-hidden">
+    <section id="contact" className="relative scroll-mt-28 overflow-hidden">
       <img
         src={images.interior.src}
         alt=""

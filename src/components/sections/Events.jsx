@@ -15,11 +15,11 @@ export default function Events() {
 
   return (
     <SectionWrapper id="events" className="bg-background">
-      <Reveal className="max-w-2xl">
+      <Reveal className="mx-auto max-w-2xl text-center">
         <h2 className="font-display text-4xl uppercase leading-none text-foreground sm:text-5xl">
           {t('events.title')}
         </h2>
-        <div className="mt-6 h-px w-16 bg-border" />
+        <div className="mx-auto mt-6 h-px w-16 bg-border" />
       </Reveal>
 
       <div className="mt-14 grid gap-6 md:grid-cols-2 md:gap-8">
