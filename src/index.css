@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────────────────────────────
+ * DESIGN TOKENS — single source of truth for the whole site.
+ * Edit a value here and it updates everywhere: colors via the Tailwind
+ * bg-/text-/border- classes, fonts via font-display and font-sans.
+ *
+ * Colors are stored as raw "R G B" channels (not hex) so the Tailwind
+ * opacity modifier keeps working — e.g. border-border/30, bg-cream/80.
+ * ────────────────────────────────────────────────────────────────────── */
+:root {
+  /* ── PALETTE — full ramps (raw R G B channels). Reference scale. ─────
+   * These are the raw colors. You normally edit the SEMANTIC tokens
+   * below, which point at these steps. Change a hue across the whole
+   * site by re-pointing a semantic token at a different ramp step. */
+
+  /* Black — warm olive-green near-black. */
+  --black-50: 243 247 237;
+  --black-100: 231 239 220;
+  --black-200: 208 223 185;
+  --black-300: 184 208 149;
+  --black-400: 161 192 114;
+  --black-500: 137 176 79;
+  --black-600: 110 141 63;
+  --black-700: 82 106 47;
+  --black-800: 55 70 32;
+  --black-900: 27 35 16;
+  --black-950: 19 25 11;
+
+  /* Carbon-black — cooler grey-green near-black (the base of the site). */
+  --carbon-50: 241 244 240;
+  --carbon-100: 227 233 226;
+  --carbon-200: 199 211 197;
+  --carbon-300: 171 189 168;
+  --carbon-400: 143 167 139;
+  --carbon-500: 115 145 110;
+  --carbon-600: 92 116 88;
+  --carbon-700: 69 87 66;
+  --carbon-800: 46 58 44;
+  --carbon-900: 23 29 22;
+  --carbon-950: 16 20 15;
+
+  /* Azure-mist — cool teal-green. Defined but currently unused. */
+  --azure-50: 239 245 244;
+  --azure-100: 224 235 233;
+  --azure-200: 193 215 210;
+  --azure-300: 162 195 188;
+  --azure-400: 131 175 166;
+  --azure-500: 99 156 143;
+  --azure-600: 80 124 115;
+  --azure-700: 60 93 86;
+  --azure-800: 40 62 57;
+  --azure-900: 20 31 29;
+  --azure-950: 14 22 20;
+
+  /* Amber-gold — bright saturated gold (primary accent). */
+  --amber-50: 254 249 230;
+  --amber-100: 254 243 205;
+  --amber-200: 253 230 155;
+  --amber-300: 252 218 105;
+  --amber-400: 251 205 55;
+  --amber-500: 250 193 5;
+  --amber-600: 200 154 4;
+  --amber-700: 150 116 3;
+  --amber-800: 100 77 2;
+  --amber-900: 50 39 1;
+  --amber-950: 35 27 1;
+
+  /* Golden-apricot — warm amber/orange (secondary warm tone). */
+  --apricot-50: 253 243 232;
+  --apricot-100: 251 232 208;
+  --apricot-200: 246 208 162;
+  --apricot-300: 242 185 115;
+  --apricot-400: 238 161 68;
+  --apricot-500: 233 138 22;
+  --apricot-600: 187 110 17;
+  --apricot-700: 140 83 13;
+  --apricot-800: 93 55 9;
+  --apricot-900: 47 28 4;
+  --apricot-950: 33 19 3;
+
+  /* ── SEMANTIC TOKENS — what the site actually uses. Edit these. ──────
+   * Each maps to one ramp step above. The Tailwind classes
+   * (bg-background, text-foreground, bg-accent, ...) read these. */
+  --color-background: var(--carbon-950); /* page background — darkest */
+  --color-surface: var(--carbon-900); /* cards, panels — one step up */
+  --color-elevated: var(--carbon-800); /* raised cards / hover surfaces */
+  --color-foreground: var(--carbon-50); /* headings + body — soft off-white */
+  --color-muted: var(--carbon-300); /* captions, secondary text */
+  --color-border: var(--carbon-700); /* dividers, hairlines, outlines */
+
+  --color-accent: var(--amber-500); /* primary highlight — gold */
+  --color-accent-strong: var(--amber-600); /* gold, pressed/hover */
+  --color-accent-warm: var(--apricot-500); /* secondary warm accent */
+
+  /* Cream — warm off-white, used for hero text alongside the gold title. */
+  --color-cream: var(--amber-50); /* soft warm cream */
+  /* Back-compat: `ink` = the darkest base surface. */
+  --color-ink: var(--carbon-950); /* dark surface token → darkest base */
+
+  /* Two typefaces only. */
+  --font-display: "Catorze 27 Medium", Georgia, serif;
+  --font-sans: "Resamitz", Georgia, serif;
+}
+
+/* ── Self-hosted typefaces (design system) ───────────────── */
+@font-face {
+  font-family: 'Catorze 27 Medium';
+  src: url('/fonts/Catorze27Medium-Regular.otf') format('opentype');
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Catorze 27 Black';
+  src: url('/fonts/Catorze27Black-Regular.otf') format('opentype');
+  font-weight: 700 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Resamitz';
+  src: url('/fonts/Resamitz-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Display type: Catorze 27 — condensed caps, tight leading. */
+  h1,
+  h2,
+  h3 {
+    @apply font-display uppercase;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    @apply bg-accent text-background;
+  }
+
+  /* Visible keyboard focus on every interactive element. */
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-accent));
+    outline-offset: 2px;
+    border-radius: 1px;
+  }
+}
+
+@layer components {
+  /* Small letter-spaced label that sits above section headings. */
+  .kicker {
+    @apply font-sans text-xs uppercase tracking-kicker text-muted;
+  }
+
+  /* Soft shadow to keep light text legible over hero photography. */
+  .text-on-photo {
+    text-shadow: 0 1px 3px rgb(0 0 0 / 0.55);
+  }
+}
+
+/* ── Scroll reveal ───────────────────────────────────────────────────
+ * Content is visible by DEFAULT. The hidden start state only applies once
+ * JS has added `.js` to <html>, so non-scrolling renders, crawlers, print
+ * and JS failures never ship blank. IntersectionObserver adds `.is-visible`. */
+[data-reveal] {
+  opacity: 1;
+}
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+html.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+  will-change: auto; /* release the compositor layer once revealed */
+}
+
+/* Reveal is enhancement only: reduced-motion users and print see it visible. */
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+@media print {
+  html.js [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Honour reduced-motion: neutralise all transitions + animations. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

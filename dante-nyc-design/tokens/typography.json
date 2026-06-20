@@ -1,0 +1,100 @@
+{
+  "families": [
+    "Catorze 27 Medium",
+    "Resamitz"
+  ],
+  "scale": {
+    "heading-1": {
+      "fontFamily": "Catorze 27 Medium",
+      "fontSize": "6rem",
+      "fontWeight": "700",
+      "lineHeight": null,
+      "source": "css"
+    },
+    "heading-2": {
+      "fontFamily": "Catorze 27 Medium",
+      "fontSize": "5.5rem",
+      "fontWeight": "700",
+      "lineHeight": null,
+      "source": "css"
+    },
+    "heading-3": {
+      "fontFamily": "Catorze 27 Medium",
+      "fontSize": "4.5rem",
+      "fontWeight": "700",
+      "lineHeight": null,
+      "source": "css"
+    },
+    "body": {
+      "fontFamily": "Resamitz",
+      "fontSize": "1rem",
+      "fontWeight": "400",
+      "lineHeight": null,
+      "source": "css"
+    },
+    "caption": {
+      "fontFamily": "Resamitz",
+      "fontSize": "1.25rem",
+      "fontWeight": "400",
+      "lineHeight": null,
+      "source": "css"
+    }
+  },
+  "fontFaces": [
+    {
+      "family": "Resamitz",
+      "src": "https://media-cdn.getbento.com/accounts/e8eee6aef7c2e8242e267a82a199ac35/media/CevbM0oT1GMEWKr5ZQvT_Resamitz_0048.otf",
+      "format": "opentype",
+      "weight": "400"
+    },
+    {
+      "family": "Catorze 27 Medium",
+      "src": "https://media-cdn.getbento.com/accounts/e8eee6aef7c2e8242e267a82a199ac35/media/qKnUILbfRyesA0bTM2eC_Scannerlicker%20-%20Catorze27Style1-Medium.otf",
+      "format": "opentype",
+      "weight": "400"
+    },
+    {
+      "family": "Catorze 27 Black",
+      "src": "https://media-cdn.getbento.com/accounts/e8eee6aef7c2e8242e267a82a199ac35/media/yPj91I9rTu2E47nYD9hx_Scannerlicker%20-%20Catorze27Style1-Black.otf",
+      "format": "opentype",
+      "weight": "400"
+    },
+    {
+      "family": "slick",
+      "src": "https://theme-assets.getbento.com/sensei/9969e7a.sensei/assets/fonts/slick-carousel/slick.eot",
+      "format": "embedded-opentype",
+      "weight": "400"
+    },
+    {
+      "family": "slick",
+      "src": "https://theme-assets.getbento.com/sensei/9969e7a.sensei/assets/fonts/slick-carousel/slick.eot?#iefix",
+      "format": "embedded-opentype",
+      "weight": "400"
+    },
+    {
+      "family": "slick",
+      "src": "https://theme-assets.getbento.com/sensei/9969e7a.sensei/assets/fonts/slick-carousel/slick.woff",
+      "format": "woff",
+      "weight": "400"
+    },
+    {
+      "family": "slick",
+      "src": "https://theme-assets.getbento.com/sensei/9969e7a.sensei/assets/fonts/slick-carousel/slick.ttf",
+      "format": "truetype",
+      "weight": "400"
+    },
+    {
+      "family": "slick",
+      "src": "https://theme-assets.getbento.com/sensei/9969e7a.sensei/assets/fonts/slick-carousel/slick.svg#slick",
+      "format": "svg",
+      "weight": "400"
+    }
+  ],
+  "rules": {
+    "maxSizesPerScreen": 4,
+    "headingWeightRange": "600-700",
+    "bodyWeight": 400,
+    "lineHeightBody": 1.5,
+    "lineHeightHeading": 1.2
+  }
+}

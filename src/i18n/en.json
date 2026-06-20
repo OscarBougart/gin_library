@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "about": "About",
+    "cocktails": "Signature Cocktails",
+    "events": "Events",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "reserve": "Reserve"
+  },
+  "hero": {
+    "kicker": "Speakeasy · Aachen",
+    "name": "The Gin Library",
+    "tagline": "Aachen's hidden speakeasy, where every book holds a story and every glass a hand-picked gin.",
+    "cta": "Reserve a table",
+    "scroll": "Discover"
+  },
+  "about": {
+    "kicker": "Our Story",
+    "title": "Between the Lines",
+    "body": "Behind an unassuming façade in Aachen's old town hides The Gin Library, an intimate speakeasy bar full of shelves, low light and more than a hundred hand-picked gins. Find the entrance and you step into a world where bar craft meets the quiet of a library, and every drink is told with care."
+  },
+  "cocktails": {
+    "kicker": "The Menu",
+    "title": "Signature Cocktails",
+    "subtitle": "Craft in a glass, from timeless classics to original creations you'll find nowhere else."
+  },
+  "events": {
+    "kicker": "Experiences",
+    "title": "Events",
+    "corporate": {
+      "title": "Corporate Events",
+      "body": "Whether a company celebration, team event or exclusive reception, we turn the library into your private space. On request with a bespoke menu, full bar service and an evening shaped entirely around you.",
+      "cta": "Inquire"
+    },
+    "ginTastings": {
+      "title": "Gin Tastings",
+      "body": "Embark on a guided journey through the world of gin. Taste a curated selection of spirits, discover their botanicals and learn what makes a truly great gin.",
+      "price": "€69 per person",
+      "priceNote": "incl. tasting & guidance",
+      "cta": "Book a tasting"
+    }
+  },
+  "gallery": {
+    "kicker": "Glimpses",
+    "title": "Gallery"
+  },
+  "contact": {
+    "kicker": "Visit Us",
+    "title": "Contact",
+    "hoursTitle": "Opening Hours",
+    "hoursWeekday": "Mon – Thu: 18:00 – 01:00",
+    "hoursWeekend": "Fri – Sat: 18:00 – 02:00",
+    "hoursClosed": "Sun: closed",
+    "addressTitle": "Address",
+    "addressLine1": "Am Büchel 11",
+    "addressLine2": "52062 Aachen",
+    "phoneLabel": "Phone",
+    "phone": "+49 160 94454665",
+    "emailLabel": "Email",
+    "email": "theginlibrary@web.de",
+    "mapLink": "View on map",
+    "intro": "Find the entrance and step inside. We recommend reserving ahead, especially on weekends.",
+    "cta": "Reserve a table"
+  },
+  "footer": {
+    "tagline": "Aachen's hidden speakeasy.",
+    "rights": "All rights reserved.",
+    "imprint": "Imprint",
+    "privacy": "Privacy"
+  }
+}
